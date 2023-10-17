@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Minefield</title>
+
+  <!-- Font: Darker Grotesque from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Contains the entire game -->
+  <div class="game-container"> 
+    <!-- Contains title and score tracker-->
+    <div class="game-panel">
+      <h1>Minefield</h1>
+      <!-- Score tracker -->
+      <div class="game-score"> 
+        <span class="score-label">SCORE</span>
+        <span class="score-counter">00000</span>
+      </div>
+    </div>
+
+    <!-- Contains the game minus game panel -->
+    <div class="game-board">
+       <!-- Contains the cells -->
+      <div class="grid"></div>
+
+      <!-- End-game screen -->
+      <div class="end-game-screen hidden">
+        <h2 class="end-game-text"></h2>
+        <button class="play-again">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/Javascript" src="script.js"></script>
+</body>
+
+</html>
