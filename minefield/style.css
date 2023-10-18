@@ -132,34 +132,40 @@ button:hover {
 }
 
 /* Media query for extra small devices (phones) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
 	h1 {
-		font-size: 58px;
+		font-size: 20px;
 	}
 	
 	.game-score {
-		font-size: 48px;
+		font-size: 16px;
 	}
 
   	.game-container {
-		width: 726px;
+		width: 242px;
   	}
 
+	.game-board {
+		border: 1px solid rgb(0, 23, 50);
+	}	
+
   	.grid {
-		height: 720px;
-		width: 720px;
+		height: 240px;
+		width: 240px;
   	}
 
   	.cell {
-		width: 72px;
-		height: 72px;
+		width: 24px;
+		height: 24px;
   	}
 
 	.end-game-text {
-		font-size: 72px;
+		font-size: 24px;
 	}
 
 	.button {
-		font-size: 36px;
+		border: 1px solid rgb(0, 23, 50);
+		font-size: 12px;
+		padding: 2px 10px 4px 10px;
 	}
 }
