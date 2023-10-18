@@ -42,27 +42,6 @@ COLOR PALETTE
 	}
 }
 
-/* Media query for small devices (tablets) */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  	body {
-    	height: 100vh;
-  	}
-}
-
-/* Media query for medium devices (desktops and laptops) */
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-  	body {
-    	height: 100vh;
-  	}
-}
-
-/* Media query for large devices (large desktops) */
-@media only screen and (min-width: 1441px) {
-  	body {
-    	height: 100vh;
-  	}
-}
-
 * {
 	margin: 0;
 	padding: 0;
