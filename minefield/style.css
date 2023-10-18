@@ -9,39 +9,6 @@ COLOR PALETTE
   clicked-cell: rgb(157, 197, 199); #9dc5c7;
 */
 
-/* Media query for extra small devices (phones) */
-@media only screen and (max-width: 600px) {
-	h1 {
-		font-size: 58px;
-	}
-	
-	.game-score {
-		font-size: 48px;
-	}
-
-  	.game-container {
-		width: 726px;
-  	}
-
-  	.grid {
-		height: 720px;
-		width: 720px;
-  	}
-
-  	.cell {
-		width: 72px;
-		height: 72px;
-  	}
-
-	.end-game-text {
-		font-size: 72px;
-	}
-
-	.button {
-		font-size: 36px;
-	}
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -162,4 +129,37 @@ button:hover {
 
 .hidden {
 	display: none;
+}
+
+/* Media query for extra small devices (phones) */
+@media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 58px;
+	}
+	
+	.game-score {
+		font-size: 48px;
+	}
+
+  	.game-container {
+		width: 726px;
+  	}
+
+  	.grid {
+		height: 720px;
+		width: 720px;
+  	}
+
+  	.cell {
+		width: 72px;
+		height: 72px;
+  	}
+
+	.end-game-text {
+		font-size: 72px;
+	}
+
+	.button {
+		font-size: 36px;
+	}
 }
