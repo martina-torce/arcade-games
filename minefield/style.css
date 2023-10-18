@@ -71,15 +71,15 @@ h1 {
 	background-color: rgb(157, 197, 199);
 }
 
+.cell-clicked,
+.cell-bomb {
+	cursor: not-allowed;
+}
+
 .cell-bomb {
 	background-color: rgb(241, 117, 78);
 	background-image: url('images/bomb.png');
 	background-size: contain;
-}
-
-.cell-clicked,
-.cell-bomb {
-	cursor: not-allowed;
 }
 
 /* End-game screen */
