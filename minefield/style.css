@@ -9,6 +9,34 @@ COLOR PALETTE
   clicked-cell: rgb(157, 197, 199); #9dc5c7;
 */
 
+/* Media query for extra small devices (phones) */
+@media only screen and (max-width: 600px) {
+  body {
+    width: 100vw;
+  }
+}
+
+/* Media query for small devices (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  body {
+    height: 100vh;
+  }
+}
+
+/* Media query for medium devices (desktops and laptops) */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body {
+    height: 100vh;
+  }
+}
+
+/* Media query for large devices (large desktops) */
+@media only screen and (min-width: 1441px) {
+  body {
+    height: 100vh;
+  }
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -120,6 +148,7 @@ button {
 	padding: 4px 20px 8px 20px;
 	cursor: pointer;
 	background-color: rgb(203, 224, 221);
+	color: rgb(0, 23, 50);
 }
 
 button:hover {
