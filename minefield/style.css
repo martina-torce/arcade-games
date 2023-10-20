@@ -174,7 +174,6 @@ button:hover {
 		line-height: 1.2;
 		font-family: 'Press Start 2P', cursive;
 		margin-bottom: 8px;
-		
 	}
 
 	button {
@@ -186,9 +185,5 @@ button:hover {
         cursor: pointer;
         background-color: rgb(203, 224, 221);
         color: rgb(0, 23, 50);
-    }
-
-    button:hover {
-        background-color: rgb(182, 203, 200);
     }
 }
