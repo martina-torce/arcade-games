@@ -13,6 +13,8 @@ const totalBombs = 16;
 const maxScore = totalCells - totalBombs;
 const bombsList = [];
 let score = 0;
+let isCellEven = false;
+let isRowEven = false;
 
 // Generate bombs randomly
 while (bombsList.length < totalBombs) {
@@ -24,9 +26,6 @@ while (bombsList.length < totalBombs) {
 /* -----------------------
 Grid and game logic
 ----------------------- */
-
-let isCellEven = false;
-let isRowEven = false;
 
 for (let i = 1; i <= totalCells; i++) {
   const cell = document.createElement('div');

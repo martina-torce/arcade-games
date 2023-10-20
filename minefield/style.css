@@ -7,6 +7,9 @@ COLOR PALETTE
   bg-dark-color: rgb(203, 224, 221); #cbe0dd;
   bg-darker-color: rgb(182, 203, 200); #b6cbc8;
   clicked-cell: rgb(157, 197, 199); #9dc5c7;
+
+  font-family: 'Darker Grotesque', sans-serif;
+  font-family: 'Press Start 2P', cursive;
 */
 
 * {
@@ -94,7 +97,6 @@ h1 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	text-transform: uppercase;
 }
 
 .win {
@@ -127,6 +129,7 @@ button:hover {
 	background-color: rgb(182, 203, 200);
 }
 
+/* Utilities */
 .hidden {
 	display: none;
 }

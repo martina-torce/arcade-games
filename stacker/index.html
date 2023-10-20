@@ -4,8 +4,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Minefield</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stacker</title>
 
   <!-- Font: Darker Grotesque from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,21 +13,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Press+Start+2P&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
   <!-- Contains the entire game -->
-  <div class="game-container"> 
+  <div class="game-container">
     <!-- Contains title and score tracker-->
-    <div class="game-panel">
-      <h1>Minefield</h1>
+    <header class="game-panel">
+      <h1>Stacker</h1>
       <!-- Score tracker -->
-      <div class="game-score"> 
+      <div class="score">
         <span class="score-label">SCORE</span>
         <span class="score-counter">00000</span>
       </div>
-    </div>
+    </header>
 
     <!-- Contains the game minus game panel -->
     <div class="game-board">
@@ -37,12 +37,15 @@
       <!-- End-game screen -->
       <div class="end-game-screen hidden">
         <h2 class="end-game-text"></h2>
-        <button class="play-again">Play Again</button>
+        <button class="btn play-again">Play Again</button>
       </div>
     </div>
-  </div>
 
-  <script type="text/Javascript" src="script.js"></script>
+    <!-- Stack button -->
+    <button class="btn btn-full stack">Stack</button>
+  </div>  
+
+  <script src="script.js"></script>
 </body>
 
 </html>
