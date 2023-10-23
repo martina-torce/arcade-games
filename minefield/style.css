@@ -13,177 +13,178 @@ COLOR PALETTE
 */
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	padding: 16px;
-	line-height: 1;
-	color: rgb(0, 23, 50);
-	background-color: rgb(216, 238, 232);
-	font-family: 'Darker Grotesque', sans-serif;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
+  padding: 16px;
+  line-height: 1;
+  color: rgb(0, 23, 50);
+  background-color: rgb(216, 238, 232);
+  font-family: "Darker Grotesque", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .game-container {
-	width: 484px;
+  width: 484px;
 }
 
 /* Game panel */
 h1 {
-	font-size: 40px;
+  font-size: 40px;
 }
 
 .game-score {
-	font-size: 32px;
-	display: flex;
-	justify-content: space-between;
+  font-size: 32px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Game board */
 .game-board {
-	position: relative;
-	border: 2px solid rgb(0, 23, 50);
+  position: relative;
+  border: 2px solid rgb(0, 23, 50);
 }
 
 .grid {
-	height: 480px;
-	width: 480px;
-	display: flex;
-	flex-wrap: wrap;
-	align-content: flex-start;
+  height: 480px;
+  width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .cell {
-	width: 48px;
-	height: 48px;
-	cursor: pointer;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
 }
 
 .cell-dark {
-	background-color: rgb(203, 224, 221);
+  background-color: rgb(203, 224, 221);
 }
 
 .cell:hover,
 .cell-clicked {
-	background-color: rgb(157, 197, 199);
+  background-color: rgb(157, 197, 199);
 }
 
 .cell-clicked,
 .cell-bomb {
-	cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .cell-bomb {
-	background-color: rgb(241, 117, 78);
-	background-image: url('images/bomb.png');
-	background-size: contain;
+  background-color: rgb(241, 117, 78);
+  background-image: url("images/bomb.png");
+  background-size: contain;
 }
 
 /* End-game screen */
 .end-game-screen {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
 }
 
 .win {
-	background-color: rgba(78, 241, 187, 0.6);
+  background-color: rgba(78, 241, 187, 0.6);
 }
 
 .lose {
-	background-color: rgba(241, 117, 78, 0.6);
+  background-color: rgba(241, 117, 78, 0.6);
 }
 
 .end-game-text {
-	font-size: 48px;
-	line-height: 1.2;
-	font-family: 'Press Start 2P', cursive;
-	margin-bottom: 16px;
+  font-size: 48px;
+  line-height: 1.2;
+  font-family: "Press Start 2P", cursive;
+  margin-bottom: 16px;
 }
 
 button {
-	border: 2px solid rgb(0, 23, 50);
-	font-size: 24px;
-	font-family: 'Darker Grotesque', sans-serif;
-	text-transform: uppercase;
-	padding: 4px 20px 8px 20px;
-	cursor: pointer;
-	background-color: rgb(203, 224, 221);
-	color: rgb(0, 23, 50);
+  border: 2px solid rgb(0, 23, 50);
+  font-size: 24px;
+  font-family: "Darker Grotesque", sans-serif;
+  text-transform: uppercase;
+  padding: 4px 20px 8px 20px;
+  cursor: pointer;
+  background-color: rgb(203, 224, 221);
+  color: rgb(0, 23, 50);
 }
 
 button:hover {
-	background-color: rgb(182, 203, 200);
+  background-color: rgb(182, 203, 200);
 }
 
 /* Utilities */
 .hidden {
-	display: none;
+  display: none;
 }
 
 /* Media query for extra small devices (phones) */
 @media only screen and (max-width: 600px) {
-	h1 {
-		font-size: 20px;
-	}
-	
-	.game-score {
-		font-size: 16px;
-		display: flex;
-		justify-content: space-between;
-	}
+  h1 {
+    font-size: 20px;
+  }
 
-  	.game-container {
-		width: 242px;
-  	}
+  .game-score {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
 
-	.game-board {
-		position: relative;
-		border: 1px solid rgb(0, 23, 50);
-	}	
+  .game-container {
+    width: 242px;
+  }
 
-  	.grid {
-		height: 240px;
-		width: 240px;
-		display: flex;
-		flex-wrap: wrap;
-		align-content: flex-start;
-  	}
+  .game-board {
+    position: relative;
+    border: 1px solid rgb(0, 23, 50);
+  }
 
-  	.cell {
-		width: 24px;
-		height: 24px;
-		cursor: pointer;
-  	}
+  .grid {
+    height: 240px;
+    width: 240px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
 
-	.end-game-text {
-		font-size: 24px;
-		line-height: 1.2;
-		font-family: 'Press Start 2P', cursive;
-		margin-bottom: 8px;
-	}
+  .cell {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
 
-	button {
-        border: 1px solid rgb(0, 23, 50);
-        font-size: 12px;
-        font-family: 'Darker Grotesque', sans-serif;
-        text-transform: uppercase;
-        padding: 2px 10px 4px 10px;
-        cursor: pointer;
-        background-color: rgb(203, 224, 221);
-        color: rgb(0, 23, 50);
-    }
+  .end-game-text {
+    font-size: 24px;
+    line-height: 1.2;
+    font-family: "Press Start 2P", cursive;
+    margin-bottom: 8px;
+  }
+
+  button {
+    border: 1px solid rgb(0, 23, 50);
+    font-size: 12px;
+    font-family: "Darker Grotesque", sans-serif;
+    text-transform: uppercase;
+    padding: 2px 10px 4px 10px;
+    cursor: pointer;
+    background-color: rgb(203, 224, 221);
+    color: rgb(0, 23, 50);
+  }
 }

@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stacker</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stacker</title>
+    <!-- Fonts from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Font: Darker Grotesque from Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Press+Start+2P&display=swap"
-    rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-  <link href="style.css" rel="stylesheet">
-</head>
+  <body>
+    <!-- Contains the entire game -->
+    <div class="game-container">
+      <!-- Contains title and score tracker-->
+      <header class="game-panel">
+        <h1>Stacker</h1>
 
-<body>
-  <!-- Contains the entire game -->
-  <div class="game-container">
-    <!-- Contains title and score tracker-->
-    <header class="game-panel">
-      <h1>Stacker</h1>
-      <!-- Score tracker -->
-      <div class="game-score">
-        <span class="score-label">SCORE</span>
-        <span class="score-counter">00000</span>
+        <!-- Score tracker -->
+        <div class="game-score">
+          <span class="score-label">SCORE</span>
+          <span class="score-counter">00000</span>
+        </div>
+      </header>
+
+      <!-- Contains the game minus game panel -->
+      <div class="game-board">
+        <!-- Contains the cells -->
+        <div class="grid"></div>
+
+        <!-- End-game screen -->
+        <div class="end-game-screen hidden">
+          <h2 class="end-game-text"></h2>
+          <button class="btn play-again">Play Again</button>
+        </div>
       </div>
-    </header>
 
-    <!-- Contains the game minus game panel -->
-    <div class="game-board">
-       <!-- Contains the cells -->
-      <div class="grid"></div>
-
-      <!-- End-game screen -->
-      <div class="end-game-screen hidden">
-        <h2 class="end-game-text"></h2>
-        <button class="btn play-again">Play Again</button>
-      </div>
+      <!-- Stack button -->
+      <button class="btn btn-full stack">Stack</button>
     </div>
 
-    <!-- Stack button -->
-    <button class="btn btn-full stack">Stack</button>
-  </div>  
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

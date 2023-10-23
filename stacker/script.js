@@ -2,12 +2,12 @@
 Game set-up
 ------------------------ */
 
-const grid = document.querySelector('.grid');
-const stackBtn = document.querySelector('.stack');
-const scoreCounter = document.querySelector('.score-counter');
-const endGameScreen = document.querySelector('.end-game-screen');
-const endGameText = document.querySelector('.end-game-text');
-const playAgainButton = document.querySelector('.play-again');
+const grid = document.querySelector(".grid");
+const stackBtn = document.querySelector(".stack");
+const scoreCounter = document.querySelector(".score-counter");
+const endGameScreen = document.querySelector(".end-game-screen");
+const endGameText = document.querySelector(".end-game-text");
+const playAgainButton = document.querySelector(".play-again");
 
 const gridMatrix = [
   [0, 0, 0, 0, 0, 0],
@@ -21,7 +21,7 @@ const gridMatrix = [
 ];
 
 let currentRowIndex = gridMatrix.length - 1;
-let barDirection = 'right';
+let barDirection = "right";
 let barSize = 3;
 let isGameOver = false;
 let score = 0;
@@ -34,24 +34,24 @@ Functions
 // Function to draw the board
 function draw() {
   // Reset grid
-  grid.innerHTML = '';
+  grid.innerHTML = "";
 
   gridMatrix.forEach(function (rowContent, rowIndex) {
     rowContent.forEach(function (cellContent, cellIndex) {
-      const cell = document.createElement('div');
-      cell.classList.add('cell');
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
 
       // Assign dark colour to cells
       const isRowEven = rowIndex % 2 === 0;
       const isCellEven = cellIndex % 2 === 0;
 
       if ((isRowEven && isCellEven) || (!isRowEven && !isCellEven)) {
-        cell.classList.add('cell-dark');
+        cell.classList.add("cell-dark");
       }
 
       // If the cell is part of the bar
       if (cellContent === 1) {
-        cell.classList.add('bar');
+        cell.classList.add("bar");
       }
 
       grid.appendChild(cell);
@@ -87,15 +87,15 @@ function isLeftEdge(row) {
 function moveBar() {
   const currentRow = gridMatrix[currentRowIndex];
 
-  if (barDirection === 'right') {
+  if (barDirection === "right") {
     moveRight(currentRow);
     if (isRightEdge(currentRow)) {
-      barDirection = 'left';
+      barDirection = "left";
     }
-  } else if (barDirection === 'left') {
+  } else if (barDirection === "left") {
     moveLeft(currentRow);
     if (isLeftEdge(currentRow)) {
-      barDirection = 'right';
+      barDirection = "right";
     }
   }
 }
@@ -142,7 +142,7 @@ function onStack() {
   if (isGameOver) return;
 
   currentRowIndex = currentRowIndex - 1;
-  barDirection = 'right';
+  barDirection = "right";
 
   // Stack
   for (let i = 0; i < barSize; i++) {
@@ -156,8 +156,8 @@ function onStack() {
 function updateScore() {
   // Scoring based on stacked blocks
   const finalBlock = document.querySelectorAll(".bar");
-  scoreCounter.innerText = finalBlock.length.toString().padStart(5, '0');
-  
+  scoreCounter.innerText = finalBlock.length.toString().padStart(5, "0");
+
   // // Scoring based on stacked rows
   // score++;
   // scoreCounter.innerText = String(score).padStart(5, "0");
@@ -166,20 +166,20 @@ function updateScore() {
 // Function to end the game
 function endGame(isVictory) {
   // Show end-game screen
-  endGameScreen.classList.remove('hidden'); 
-  
+  endGameScreen.classList.remove("hidden");
+
   // If user has won
   if (isVictory === true) {
-    stackBtn.classList.add('invisible');
-    endGameScreen.classList.add('win');
-    endGameText.innerHTML = 'YOU<br>WIN';
+    stackBtn.classList.add("invisible");
+    endGameScreen.classList.add("win");
+    endGameText.innerHTML = "YOU<br>WIN";
 
-  // If user has lost
+    // If user has lost
   } else if (isVictory === false) {
-    stackBtn.classList.add('invisible');
-    endGameScreen.classList.add('lose');
-    endGameText.innerHTML = 'GAME<br>OVER';
-  }  
+    stackBtn.classList.add("invisible");
+    endGameScreen.classList.add("lose");
+    endGameText.innerHTML = "GAME<br>OVER";
+  }
 }
 
 // Function to reload the game
@@ -197,8 +197,15 @@ function main() {
 Events
 ----------------------- */
 
-stackBtn.addEventListener('click', onStack);
-playAgainButton.addEventListener('click', playAgain);
+// Event listener for the "Stack" button click
+stackBtn.addEventListener("click", onStack);
+
+// Event listener for the "Play Again" button click
+playAgainButton.addEventListener("click", playAgain);
+
+/* -----------------------
+Game logic
+----------------------- */
 
 // First draw
 draw();

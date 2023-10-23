@@ -2,11 +2,11 @@
 Game set-up
 ------------------------ */
 
-const scoreCounter = document.querySelector('.score-counter');
-const grid = document.querySelector('.grid');
-const endGameScreen = document.querySelector('.end-game-screen');
-const endGameText = document.querySelector('.end-game-text');
-const playAgainButton = document.querySelector('.play-again')
+const scoreCounter = document.querySelector(".score-counter");
+const grid = document.querySelector(".grid");
+const endGameScreen = document.querySelector(".end-game-screen");
+const endGameText = document.querySelector(".end-game-text");
+const playAgainButton = document.querySelector(".play-again");
 
 const totalCells = 100;
 const totalBombs = 16;
@@ -23,30 +23,29 @@ while (bombsList.length < totalBombs) {
 }
 // console.log(bombsList); // for testing
 
-/* -----------------------
-Grid and game logic
------------------------ */
-
+// Set up grid and game logic
 for (let i = 1; i <= totalCells; i++) {
-  const cell = document.createElement('div');
-  cell.classList.add('cell');
+  const cell = document.createElement("div");
+  cell.classList.add("cell");
 
   // Assign dark colour to cells
   isCellEven = i % 2 === 0;
-  if (isRowEven && isCellEven || !isRowEven && !isCellEven) cell.classList.add('cell-dark');
+  if ((isRowEven && isCellEven) || (!isRowEven && !isCellEven)) {
+    cell.classList.add("cell-dark");
+  }
   if (i % 10 === 0) isRowEven = !isRowEven;
 
-  cell.addEventListener('click', function () {
-    if (cell.classList.contains('cell-clicked')) {
+  cell.addEventListener("click", function () {
+    if (cell.classList.contains("cell-clicked")) {
       // If the cell has already been clicked
       return;
     } else if (bombsList.includes(i)) {
       // If the cell is a bomb
-      cell.classList.add('cell-bomb');
+      cell.classList.add("cell-bomb");
       endGame(false); // User has lost
     } else {
       // If the cell is not a bomb
-      cell.classList.add('cell-clicked');
+      cell.classList.add("cell-clicked");
       updateScore();
     }
   });
@@ -70,27 +69,27 @@ function updateScore() {
 // Function to end the game
 function endGame(isVictory) {
   // Show end-game screen
-  endGameScreen.classList.remove('hidden'); 
+  endGameScreen.classList.remove("hidden");
   revealAllBombs();
-  
+
   if (isVictory === true) {
     // If user has won
-    endGameScreen.classList.add('win');
-    endGameText.innerHTML = 'YOU<br>WIN';
+    endGameScreen.classList.add("win");
+    endGameText.innerHTML = "YOU<br>WIN";
   } else if (isVictory === false) {
     // If user has lost
-    endGameScreen.classList.add('lose');
-    endGameText.innerHTML = 'GAME<br>OVER';
-  }  
+    endGameScreen.classList.add("lose");
+    endGameText.innerHTML = "GAME<br>OVER";
+  }
 }
 
 // Function to reveal all bombs
 function revealAllBombs() {
-  const cells = document.querySelectorAll('.cell');
+  const cells = document.querySelectorAll(".cell");
   for (let i = 1; i <= cells.length; i++) {
     if (bombsList.includes(i)) {
       const cellToReveal = cells[i - 1];
-      cellToReveal.classList.add('cell-bomb');
+      cellToReveal.classList.add("cell-bomb");
     }
   }
 }
@@ -104,4 +103,5 @@ function playAgain() {
 Events
 ----------------------- */
 
-playAgainButton.addEventListener('click', playAgain);
+// Event listener for the "Play Again" button click
+playAgainButton.addEventListener("click", playAgain);

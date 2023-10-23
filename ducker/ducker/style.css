@@ -1,11 +1,12 @@
-/* 
+/*
 COLOR PALETTE
   black: rgb(0, 23, 50); #001732;
-  orange: rgb(241, 117, 78); #f1754e;
+  lost screen: rgb(241, 117, 78); #f1754e;
+  won screen: rgb(78, 241, 187); #4ef1bb;
   bg-color: rgb(216, 238, 232);  #d8eee8;
   bg-dark-color: rgb(203, 224, 221); #cbe0dd;
+  bg-darker-color: rgb(182, 203, 200); #b6cbc8;
   clicked-cell: rgb(157, 197, 199); #9dc5c7;
-  transparent red: rgba(241, 117, 78, 0.7);
 
   font-family: 'Darker Grotesque', sans-serif;
   font-family: 'Press Start 2P', cursive;
@@ -29,27 +30,8 @@ body {
   height: 100vh;
 }
 
-.btn {
-  border: 2px solid rgb(0, 23, 50);
-  font-size: 24px;
-  font-family: "Darker Grotesque", sans-serif;
-  text-transform: uppercase;
-  padding: 4px 20px 8px 20px;
-  cursor: pointer;
-  background-color: rgb(203, 224, 221);
-  color: rgb(0, 23, 50);
-}
-
-.btn:hover {
-  background-color: rgb(182, 203, 200);
-}
-
-.btn-full {
-  width: 100%;
-}
-
 .game-container {
-  width: calc((48px * 6) + 4px);
+  width: calc((48px * 9) + 4px);
 }
 
 /* Game panel */
@@ -58,38 +40,75 @@ h1 {
 }
 
 .game-score {
+  font-size: 32px;
   display: flex;
   justify-content: space-between;
-  font-size: 32px;
 }
 
 /* Game board */
 .game-board {
   position: relative;
-  margin-bottom: 8px;
   border: 2px solid rgb(0, 23, 50);
 }
 
 .grid {
-  width: calc((48px * 6) + 4px);
+  width: calc(48px * 9);
+  height: calc(48px * 9);
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .cell {
   width: 48px;
   height: 48px;
   cursor: pointer;
+  background-size: contain;
 }
 
 .cell-dark {
   background-color: rgb(203, 224, 221);
 }
 
-.bar {
-  background-color: #f1754e;
-  border-radius: 8px;
-  border: 2px solid rgb(0, 23, 50);
+.river {
+  background-color: lightskyblue;
+}
+
+.road {
+  border-top: 1px dashed white;
+  border-bottom: 1px dashed white;
+  background-color: gray;
+}
+
+.wood {
+  background-image: url("images/wood.png");
+}
+
+.bus {
+  background-image: url("images/bus.png");
+}
+
+.car {
+  background-image: url("images/car.png");
+}
+
+.duck {
+  background-image: url("images/duck-walk.gif");
+}
+
+.duck-arrived {
+  background-image: url("images/duck-standing.png");
+}
+
+.duck-drowned {
+  background-image: url("images/duck-drowned.png");
+}
+.duck-hit {
+  background-image: url("images/duck-hit.png");
+}
+
+.river.duck {
+  background-image: url("images/duck-walk.gif"), url("images/wood.png");
 }
 
 /* End-game screen */
@@ -100,16 +119,15 @@ h1 {
   right: 0;
   bottom: 0;
 
-  align-items: center;
-  justify-content: center;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
 }
 
 .win {
-  background-color: rgba(78, 241, 187, 0.7);
+  background-color: rgba(78, 241, 187, 0.6);
 }
 
 .lose {
@@ -118,17 +136,28 @@ h1 {
 
 .end-game-text {
   font-size: 48px;
+  line-height: 1.2;
   font-family: "Press Start 2P", cursive;
-  text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
-/* Utilities */
+button {
+  border: 2px solid rgb(0, 23, 50);
+  font-size: 24px;
+  font-family: "Darker Grotesque", sans-serif;
+  text-transform: uppercase;
+  padding: 4px 20px 8px 20px;
+  cursor: pointer;
+  background-color: rgb(203, 224, 221);
+  color: rgb(0, 23, 50);
+}
+
+button:hover {
+  background-color: rgb(182, 203, 200);
+}
+
 .hidden {
   display: none;
-}
-
-.invisible {
-  opacity: 0;
 }
 
 /* Media query for extra small devices (phones) */
@@ -144,34 +173,37 @@ h1 {
   }
 
   .game-container {
-    width: calc(((48px * 6) + 4px) / 2);
+    width: calc(((48px * 9) + 4px) / 2);
   }
 
   .game-board {
     position: relative;
-    margin-bottom: 4px;
     border: 1px solid rgb(0, 23, 50);
   }
 
   .grid {
-    width: calc(((48px * 6) + 4px) / 2);
+    width: calc((48px * 9) / 2);
+    height: calc((48px * 9) / 2);
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
   }
 
   .cell {
     width: 24px;
     height: 24px;
     cursor: pointer;
+    background-size: contain;
   }
 
   .end-game-text {
     font-size: 24px;
+    line-height: 1.2;
     font-family: "Press Start 2P", cursive;
-    text-transform: uppercase;
+    margin-bottom: 8px;
   }
 
-  .btn {
+  button {
     border: 1px solid rgb(0, 23, 50);
     font-size: 12px;
     font-family: "Darker Grotesque", sans-serif;
